@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SwagX</title>
+    <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <style type="text/css">
+        input {
+            width: 380px;
+            height: 30px;
+            font-size: 20px
+        }
+
+        input::-webkit-input-placeholder {
+            color: #999;
+            transition: color.5s;
+            font-size: 20px
+        }
+
+        input:focus::-webkit-input-placeholder,
+        input:hover::-webkit-input-placeholder {
+            color: #c2c2c2;
+            transition: color.5s;
+        }
+
+        button {
+            background-color: #85EA2D;
+            color: black;
+            padding: 5px 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p style="font-size: 30px; font-weight: bold;margin: 20px;">SwagX</p>
+    </div>
+    <div align="center" style="margin-top: 200px">
+        <div style="display: inline-block;" align="center">
+            <img src="./img/logo.png" height="140px"></img>
+        </div>
+        <form align="center" style="margin-top: 50px">
+            <input name="swaggerApi" id="api" placeholder="Please Input Swagger JSON API">
+            <button onclick="download()" type="submit">Download</button>
+        </form>
+    </div>
+    <script>
+        function download() {
+            window.open("http://localhost:5566/download?api=" + document.getElementById('api').value);
+        }
+    </script>
+
+</body>
+
+</html>
